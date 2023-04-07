@@ -1,0 +1,118 @@
+Today's Topics 
+
+Array of primitive types n array of references
+static keyword
+Enter Inheritance n later Polymorphism
+
+1. Revise :
+How to create array of primitive types? 
+eg : array of ints of size 100
+psvm(...) {
+int[] ints;//array type ref ---> array obj
+ints=new int[100];//[I cls loaded in method area , obj is created in heap
+}
+
+Is array an object ? Yes
+Which class ? [I
+Mem pic ???
+
+1.1 Display array data using for-each loop
+
+for-each loop(enhanced for loop)
+syntax of for-each loop
+for(int i : ints) //implicit assignment : i=ints[0],i=ints[1]......i=ints[ints.length-1]
+ sop(i);
+
+eg : Display array data using for-each loop
+
+Important statement
+Works on a copy of array element.
+
+for-each limitations
+1. Can only iterate from 1st elem to last elem , with step size +1
+2. Works on a copy of array elems
+(can't be used for modifying array elems).
+
+
+1.2 Array of references
+
+Create a tester class  : TestBoxArray : "tester"
+
+Objective : Ask user(client) , how many boxes to make ?
+Accept Box dims 
+
+Store these details suitably.
+
+1. Display using single for-each loop, box dims n volume
+
+2. Double box width for all boxes having volume > 100.(USE for-each & solve this)
+
+
+
+2. static keyword
+refer to readme
+
+3.
+Inheritance 
+refer to "readme inheritance.txt" from today's help.
+Person-Student-Faculty scenarion (constr invocation in inheritance hierarchy)
+
+
+What is inheritance ?
+Important part of OOP 
+Represents IS A relationship
+Higher hierarchy : super class
+lower hierarchy :sub class
+key word : extends
+As you go down the inheritance hierarchy --it's generailization ---> specialization
+Why : Reduces redundancy , increases re usability
+Universal super class : java.lang.Object
+
+
+eg : class Emp /*extends Object*/{....}
+class Mgr extends Emp {...}
+class SalesMgr extends Mgr {...}
+
+
+
+Types : single , multilevel  ,hierarchial , multiple (not supported) : ambiguity
+
+constr invocation in inheritance hierarchy : refer to diag.
+
+How to display details of student n faculty ?
+
+
+super keyword
+super keyword usages
+1. To invoke super cls constr (eg : super(fn,ln))
+2. To access super cls's accessible members (eg : super.toString())
+
+Important statements
+Sub class IS A super class + something more(addtional data members + methods) + something modofied(behaviour : methods : method overriding)
+
+
+-----------------Completed so far -----------------------
+
+Enter polymorphism : refer to readme inheritance poly.
+
+
+Objectives 
+4.1 What is inheritance  n Why 
+4.2 Real life Examples 
+4.3 Types
+4.4 constr invocation in inheritance hierarchy
+super keyword
+Person-Student-Faculty scenario (constructor invocation in inheritance hierarchy)
+4.5 Show details : via getDetails : method overriding
+
+
+Objective : Arrange an event to invite students n faculties
+
+(eg : EventOrganizer app : tester --main / scanner)
+Prompt user for event capacity.
+Create suitable data structure to hold the participant details
+Options 
+1. Register Student : 
+2. Register Faculty : 
+3. Display participant details : for-each 
+10. Exit

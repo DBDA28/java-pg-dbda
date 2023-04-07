@@ -1,0 +1,176 @@
+Today's topics
+
+Revise polymorphism
+Enter Abstraction
+Abstract classes n Interfaces
+
+
+Student's query
+When you write ,
+Student s1=new Student(.....);
+System.out.println(s1);
+
+How does above statement call s1.toString() ?????
+Refer java.io.PrintStream : println(Object ref)
+---> String.valueOf(ref) 
+ref==null : prints null
+o.w : ref.toString()
+
+Discuss @Override annotation first n then do the revision
+
+
+Revision through code 
+Solve :
+Fruit : super class
+public String taste()
+{
+ return "No specific taste";
+}
+
+Mango extends Fruit
+{
+ override : to return "sweet"
+@Override
+public String taste()
+{
+  return "sweet";
+}
+}
+Orange extends Fruit
+{
+ @Override
+public String taste()
+{
+  return "sour";
+}
+}
+Alphonso extends Mango
+{
+   @Override
+public String taste()
+{
+  return "very sweet n juicy";
+}
+}
+Apple extends Fruit 
+{
+    @Override
+  public String taste()
+ {
+   return "sweet n sour";
+ }   
+}
+
+
+Solve
+What will happen ?
+Fruit f=new Mango();//up casting
+sop(f.taste());//sweet : run time poly.
+
+f=new Orange(...);
+sop(f.taste());//sour
+
+
+f=new Alphonso();
+f.taste();//very sweet n juicy
+
+
+Object o=f;
+sop(o.taste()); //javac error : Fruit IS-A Object BUT Object may not Fruti always (down casting)
+
+When is downcasting necessary ?
+In the indirect referencing(i.e super cls ref---> sub class object eg : Object o=new Mango();) when you want to access sub class specific functionality (eg : taste()) , down casting is required .
+
+soln :
+sop(((Alphonso)o)).taste());
+
+
+
+
+
+
+Enter polymorphism formally : refer to readme inheritance polymorphism
+
+Refer to method overloading vs method overriding
+
+Identify the rules.
+Examples of method overloading : print / println methods
+
+Example of Method overriding
+eg : toString
+
+
+Next Objective : Executing sub class specific functionality.
+Add a new method "study" in Student class & "teach" in Faculty class
+Option 5 : User i/p : seat no
+Check if seat no is valid .
+In case of valid seat no  --- If it's a Student , invoke study method , if it's a Faculty invoke teach method
+
+
+
+Is there any guard or any way to perform RTTI(Run time type info) checking ? 
+
+1. instanceof keyword
+OR
+2. Using reflection (later)
+
+How to avoid class cast exc ?
+using instanceof keyword.
+
+
+Important : 
+When will you need to apply downcasting?
+In indirect referencing , when super cls ref ---> sub class object n trying to invoke sub class specific functionality
+
+Answer this
+
+eg ---Object <----Emp <---Mgr <---SalesMgr
+Object <---- Emp <--- Worker
+
+What will be o/p ?
+Emp e =new Mgr(...);//up casting
+e instanceof Mgr - true
+e instanceof Emp - true (why : Mgr IS-A Emp)
+e instanceof Object - true
+e instanceof SalesMgr  -- false
+e instanceof Worker -false
+e=null;
+e instanceof Emp/Mgr/SalesMgr/Worker/Object  --false
+
+
+Tester : Lab work 
+How will you create a basket of fruits , with 1 apple , 2 alphonso , 1 orange : using dynamic init of array ?(in a single java statment)
+How will you display tastes of all fruits ?
+
+
+
+1. Enter abstraction
+refer : :regarding abstraction"
+
+eg : Shapes scenario
+Solve this
+
+1. BoundedShape -- x,y (state) : tight encapsulation
+ctor : 2 args 
+public double area() : 
+@Override
+public String toString(){...}
+
+2. Circle -- x,y,radius
+Method --public double area()
+public String toString()
+
+3. Rectangle -- x,y,w,h
+Method --public double area()
+public String toString()
+
+eg : In a Tester 
+Create bounded shapes using dyn init of array.
+{c1,r1,c2,r2}
+Display it's info n area : for-each
+If area() is NOT defined in BoundedShape class
+for(BoundedShape s : shapes)
+ sop(s.area());
+
+Enter interfaces.
+refer to readmes.

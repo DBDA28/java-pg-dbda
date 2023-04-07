@@ -1,0 +1,11 @@
+	          Fruit: taste---no taste
+		        /         \       \
+	           /           \       \_
+              /             \         \________________
+             /               \                          \
+mango: @taste---sweet      orange: @taste---sour         \
+          /                                              Apple: @sweet and sour
+         /
+        /
+Alphanso: @taste very sweet and juicy
+
